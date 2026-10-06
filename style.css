@@ -1,0 +1,141 @@
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #10172a, #243b55);
+    color: #f4f7fb;
+    min-height: 100vh;
+    padding: 35px 15px;
+}
+
+.container {
+    max-width: 650px;
+    margin: auto;
+    padding: 30px;
+    background: #182337;
+    border: 1px solid #34445e;
+    border-radius: 18px;
+    box-shadow: 0 12px 35px #0005;
+}
+
+.header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.icon {
+    font-size: 45px;
+}
+
+h1 {
+    font-size: 27px;
+    margin-bottom: 10px;
+}
+
+.header p {
+    color: #b4c3d8;
+    font-size: 14px;
+}
+
+label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+input {
+    width: 100%;
+    padding: 14px;
+    border-radius: 8px;
+    border: 1px solid #526783;
+    background: #101a2b;
+    color: white;
+    font-size: 16px;
+    margin-bottom: 15px;
+}
+
+button {
+    width: 100%;
+    padding: 14px;
+    background: #5b8cff;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #4074ed;
+}
+
+.result {
+    margin-top: 28px;
+    padding: 20px;
+    background: #101a2b;
+    border-radius: 12px;
+}
+
+h2, h3 {
+    color: #a9c5ff;
+}
+
+h3 {
+    margin-top: 25px;
+}
+
+.strength {
+    padding: 13px;
+    text-align: center;
+    border-radius: 8px;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.weak {
+    background: #572b35;
+    color: #ff9da9;
+}
+
+.medium {
+    background: #594723;
+    color: #ffd782;
+}
+
+.strong {
+    background: #174b3c;
+    color: #8af0c5;
+}
+
+.check {
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 10px 0;
+    border-bottom: 1px solid #2d3a50;
+}
+
+.pass {
+    color: #67e6ad;
+}
+
+.fail {
+    color: #ff8796;
+}
+
+li {
+    margin: 10px 0;
+    line-height: 1.5;
+}
+
+footer {
+    text-align: center;
+    margin-top: 25px;
+    color: #9aabc2;
+    font-size: 12px;
+}

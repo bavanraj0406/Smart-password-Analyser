@@ -1,0 +1,72 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Password Analyzer</title>
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="icon">🔐</div>
+            <h1>Smart Password Analyzer</h1>
+            <p>Theory of Computation | Regular Languages & CFG</p>
+        </div>
+
+        <form method="POST" autocomplete="off">
+            <label for="password">Enter a test password</label>
+            <input type="password" id="password" name="password"
+                   placeholder="Enter your password" required>
+            <button type="submit">Analyze Password</button>
+        </form>
+
+        {% if result %}
+        <div class="result">
+            <h2>Password Analysis</h2>
+
+            <div class="strength {{ result.strength|lower }}">
+                Strength: {{ result.strength }}
+            </div>
+
+            <h3>Regular Expression Checks</h3>
+            {% for name, passed in result.checks.items() %}
+            <div class="check">
+                <span>{{ name }}</span>
+                <span class="{{ 'pass' if passed else 'fail' }}">
+                    {{ 'PASS' if passed else 'FAIL' }}
+                </span>
+            </div>
+            {% endfor %}
+
+            <h3>Theory of Computation Results</h3>
+            <div class="check">
+                <span>Finite-state rule validation</span>
+                <b class="{{ 'pass' if result.fa_accepted else 'fail' }}">
+                    {{ 'ACCEPTED' if result.fa_accepted else 'REJECTED' }}
+                </b>
+            </div>
+            <div class="check">
+                <span>CFG bracket structure</span>
+                <b class="{{ 'pass' if result.cfg_accepted else 'fail' }}">
+                    {{ 'ACCEPTED' if result.cfg_accepted else 'REJECTED' }}
+                </b>
+            </div>
+
+            <h3>Suggestions</h3>
+            <ul>
+                {% for suggestion in result.suggestions %}
+                <li>{{ suggestion }}</li>
+                {% endfor %}
+            </ul>
+        </div>
+        {% endif %}
+
+        <footer>
+            Educational project • Your password is not saved by this app.
+        </footer>
+    </div>
+</body>
+</html>
